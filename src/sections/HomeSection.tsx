@@ -1,11 +1,10 @@
 import React from "react";
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography, IconButton, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-
-const avatar = "/professional_gold_illustration-removebg-preview.png"; // Replace with actual image
+const avatar = "/professional_gold_illustration-removebg-preview.png"; // Replace with your actual image
 
 const HomeSection: React.FC = () => {
   return (
@@ -16,11 +15,12 @@ const HomeSection: React.FC = () => {
         minHeight: "100vh",
         bgcolor: "background.default",
         display: "flex",
-        flexDirection: "row",
+        flexDirection: { xs: "column", md: "row" }, // ✅ Stacks on mobile, side-by-side on larger screens
         alignItems: "center",
         justifyContent: "center",
         padding: { xs: "40px 20px", md: "80px 100px" },
-        overflowX: "hidden", // Prevents overflow on this section
+        textAlign: { xs: "center", md: "left" },
+        overflowX: "hidden",
       }}
     >
       {/* Social Icons Sidebar */}
@@ -33,7 +33,7 @@ const HomeSection: React.FC = () => {
           display: "flex",
           flexDirection: "column",
           gap: 2,
-          overflowX: "hidden", // Prevents overflow on this section
+          zIndex: 10,
         }}
       >
         <IconButton href="https://linkedin.com/in/minashoukrala" target="_blank" sx={{ color: "text.primary" }}>
@@ -45,69 +45,81 @@ const HomeSection: React.FC = () => {
       </Box>
 
       {/* Left Side - Text Content */}
-    <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" }, paddingLeft: { xs: "50px", md: "80px" }, overflowX: "hidden" }}>
-    <Typography 
-    variant="h5" 
-    sx={{ 
-        bgcolor: "#FAFAD2", 
-        display: "inline-block",
-        px: 2, 
-        py: 1, 
-        borderRadius: "8px",
-        fontWeight: "bold",
-        fontFamily: "'Orbitron', sans-serif",  // Apply the futuristic font
-        letterSpacing: "2px",  // Add spacing like the reference
-        textTransform: "uppercase", // Match the reference style
-        color: "black",
-        mb: 2
-        
-    }}>
-    👋 Hi There! I'm Mina Shoukrala
-    </Typography>
+      <Box sx={{ flex: 1, padding: { xs: "20px", md: "80px" } }}>
+        <Typography
+          variant="h5"
+          sx={{
+            bgcolor: "#FAFAD2",
+            display: "inline-block",
+            px: 2,
+            py: 1,
+            borderRadius: "8px",
+            fontWeight: "bold",
+            fontFamily: "'Orbitron', sans-serif",
+            letterSpacing: "2px",
+            textTransform: "uppercase",
+            color: "black",
+            mb: 2,
+          }}
+        >
+          👋 Hi There! I'm Mina Shoukrala
+        </Typography>
 
-    <Typography 
-    variant="h2" 
-    sx={{ 
-        fontWeight: "bold", 
-        color: "text.primary", 
-        fontFamily: "'Orbitron', sans-serif", 
-        textTransform: "uppercase", 
-        letterSpacing: "3px", 
-        mb: 1 
-    }}>
-    A <span style={{ color: "#FAFAD2" }}>Tech-Savvy Innovator</span>
-    </Typography>
+        <Typography
+          variant="h2"
+          sx={{
+            fontWeight: "bold",
+            color: "text.primary",
+            fontFamily: "'Orbitron', sans-serif",
+            textTransform: "uppercase",
+            letterSpacing: "3px",
+            mb: 1,
+            fontSize: { xs: "2.5rem", md: "4rem" },
+          }}
+        >
+          A <span style={{ color: "#FAFAD2" }}>Tech-Savvy Innovator</span>
+        </Typography>
 
-
-    </Box>
+        <Typography
+          variant="h6"
+          sx={{
+            color: "text.secondary",
+            maxWidth: "600px",
+            mb: 3,
+            lineHeight: 1.6,
+            fontSize: { xs: "1rem", md: "1.2rem" },
+          }}
+        >
+          Make lives better with technology.
+        </Typography>
+        </Box>
 
       {/* Right Side - Image */}
-     
-        <Box 
+      <Box
         sx={{
-            flex: 1, 
-            display: "flex", 
-            justifyContent: "center", 
-            alignItems: "center",
-            width: "100%",
-            overflow: "hidden", // Ensures no horizontal scroll
+          flex: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          overflow: "hidden",
         }}
-        >
+      >
         <motion.img
-            src={avatar}
-            alt="Mina's Avatar"
-            initial={{ opacity: 0, scale: 0.8 }} // Fades in and starts slightly smaller
-            animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }} // Smooth fade-in & floating effect
-            transition={{ duration: 1.5, ease: "easeOut", repeat: Infinity, repeatType: "reverse" }} // Smooth looping motion
-            whileHover={{ scale: 1.05, rotate: 2, y: -15 }} // Slight rotation and movement on hover
-            style={{
+          src={avatar}
+          alt="Mina's Avatar"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          whileHover={{ scale: 1.05, y: -10 }}
+          style={{
             width: "100%",
             maxWidth: "550px",
             height: "auto",
             objectFit: "cover",
-            }}
+          }}
         />
-        </Box>
+      </Box>
     </Box>
   );
 };

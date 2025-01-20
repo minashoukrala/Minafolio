@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { AppBar, Toolbar, Box, Button, IconButton, Drawer, List, ListItem, ListItemButton } from "@mui/material";
-import { Link as ScrollLink } from "react-scroll";
 import MenuIcon from "@mui/icons-material/Menu"; // Hamburger icon
 
 const Navbar: React.FC = () => {
@@ -8,6 +7,18 @@ const Navbar: React.FC = () => {
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  // Function to scroll to a section smoothly
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 80, // Adjust for navbar height
+        behavior: "smooth",
+      });
+    }
+    setMobileOpen(false); // Close mobile menu after clicking
   };
 
   return (
@@ -18,8 +29,7 @@ const Navbar: React.FC = () => {
           bgcolor: "primary.main",
           boxShadow: "none",
           height: { xs: "70px", md: "80px" },
-          width: "100vw", // ✅ Ensures it fills the full screen width
-          
+          width: "100vw",
         }}
       >
         <Toolbar
@@ -28,8 +38,8 @@ const Navbar: React.FC = () => {
             justifyContent: "space-between",
             alignItems: "center",
             width: "100%",
-            maxWidth: "100%", // ✅ Ensures navbar elements align properly
-            paddingX: { xs: "20px", md: "50px" }, // ✅ Adjusts spacing dynamically
+            maxWidth: "100%",
+            paddingX: { xs: "20px", md: "50px" },
           }}
         >
           {/* Logo */}
@@ -47,26 +57,18 @@ const Navbar: React.FC = () => {
 
           {/* Navbar Links - Visible on Large Screens */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: "40px" }}>
-            <ScrollLink to="home" smooth={true} duration={500}>
-              <Button sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
-                Home
-              </Button>
-            </ScrollLink>
-            <ScrollLink to="projects" smooth={true} duration={500}>
-              <Button sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
-                Projects
-              </Button>
-            </ScrollLink>
-            <ScrollLink to="about" smooth={true} duration={500}>
-              <Button sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
-                About
-              </Button>
-            </ScrollLink>
-            <ScrollLink to="contact" smooth={true} duration={500}>
-              <Button sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
-                Contact
-              </Button>
-            </ScrollLink>
+            <Button onClick={() => scrollToSection("home")} sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
+              Home
+            </Button>
+            <Button onClick={() => scrollToSection("projects")} sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
+              Projects
+            </Button>
+            <Button onClick={() => scrollToSection("about")} sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
+              About
+            </Button>
+            <Button onClick={() => scrollToSection("contact")} sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
+              Contact
+            </Button>
           </Box>
 
           {/* Hamburger Menu Button - Visible on Small Screens */}
@@ -94,39 +96,31 @@ const Navbar: React.FC = () => {
       >
         <List>
           <ListItem disablePadding>
-            <ListItemButton onClick={handleDrawerToggle}>
-              <ScrollLink to="home" smooth={true} duration={500} style={{ width: "100%" }}>
-                <Button sx={{ color: "text.primary", fontSize: "1.4rem", fontWeight: "bold", textTransform: "none" }}>
-                  Home
-                </Button>
-              </ScrollLink>
+            <ListItemButton onClick={() => scrollToSection("home")}>
+              <Button sx={{ color: "text.primary", fontSize: "1.4rem", fontWeight: "bold", textTransform: "none" }}>
+                Home
+              </Button>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton onClick={handleDrawerToggle}>
-              <ScrollLink to="projects" smooth={true} duration={500} style={{ width: "100%" }}>
-                <Button sx={{ color: "text.primary", fontSize: "1.4rem", fontWeight: "bold", textTransform: "none" }}>
-                  Projects
-                </Button>
-              </ScrollLink>
+            <ListItemButton onClick={() => scrollToSection("projects")}>
+              <Button sx={{ color: "text.primary", fontSize: "1.4rem", fontWeight: "bold", textTransform: "none" }}>
+                Projects
+              </Button>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton onClick={handleDrawerToggle}>
-              <ScrollLink to="about" smooth={true} duration={500} style={{ width: "100%" }}>
-                <Button sx={{ color: "text.primary", fontSize: "1.4rem", fontWeight: "bold", textTransform: "none" }}>
-                  About
-                </Button>
-              </ScrollLink>
+            <ListItemButton onClick={() => scrollToSection("about")}>
+              <Button sx={{ color: "text.primary", fontSize: "1.4rem", fontWeight: "bold", textTransform: "none" }}>
+                About
+              </Button>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton onClick={handleDrawerToggle}>
-              <ScrollLink to="contact" smooth={true} duration={500} style={{ width: "100%" }}>
-                <Button sx={{ color: "text.primary", fontSize: "1.4rem", fontWeight: "bold", textTransform: "none" }}>
-                  Contact
-                </Button>
-              </ScrollLink>
+            <ListItemButton onClick={() => scrollToSection("contact")}>
+              <Button sx={{ color: "text.primary", fontSize: "1.4rem", fontWeight: "bold", textTransform: "none" }}>
+                Contact
+              </Button>
             </ListItemButton>
           </ListItem>
         </List>

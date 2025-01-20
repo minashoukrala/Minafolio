@@ -18,10 +18,15 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={{ width: "100vw",
-      height: "100vh",
-      overflowX: "hidden", // ✅ Prevents horizontal scrolling
-      overflowY: "auto",  }}>
+    <Box sx={{
+    width: "99vw", // to ensure no overflow
+    minHeight: "100vh",
+    overflowX: "hidden", // ✅ Prevents unwanted horizontal scrolling
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  }}>
       {isLoading ? (
         <LoadingScreen />
       ) : (
