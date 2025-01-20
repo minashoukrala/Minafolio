@@ -40,3 +40,19 @@
 .read-the-docs {
   color: #888;
 }
+html, body {
+  overflow-x: hidden;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+img {
+  outline: none;
+}
+img:focus {
+  outline: none;
+  border: none;
+}
+html {
+  scroll-behavior: smooth; /* ✅ Enables smooth scrolling */
+}

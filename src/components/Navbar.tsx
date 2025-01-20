@@ -19,6 +19,7 @@ const Navbar: React.FC = () => {
           boxShadow: "none",
           height: { xs: "70px", md: "80px" },
           width: "100vw", // ✅ Ensures it fills the full screen width
+          
         }}
       >
         <Toolbar
@@ -34,7 +35,7 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Box
             component="img"
-            src="/logo.png"
+            src="b96df776def348648835c0b74109673a-free__3_-removebg-preview.png"
             alt="Mina Shoukrala Logo"
             sx={{
               width: { xs: "120px", md: "150px" },

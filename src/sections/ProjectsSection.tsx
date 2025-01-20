@@ -14,6 +14,7 @@ const ProjectsSection: React.FC = () => {
     alignItems: "center",
     justifyContent: "center",
     padding: { xs: "40px 20px", md: "80px 100px" },
+    overflow: "hidden", // Prevents overflow on this section
   }}
 >
   <Typography variant="h2" sx={{ color: "text.primary", textAlign: { xs: "center", md: "left" } }}>

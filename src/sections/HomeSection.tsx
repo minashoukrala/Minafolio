@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, Typography, Button, IconButton } from "@mui/material";
+import { Box, Typography, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { red } from "@mui/material/colors";
+
 
 const avatar = "/professional_gold_illustration-removebg-preview.png"; // Replace with actual image
 
@@ -20,6 +20,7 @@ const HomeSection: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         padding: { xs: "40px 20px", md: "80px 100px" },
+        overflowX: "hidden", // Prevents overflow on this section
       }}
     >
       {/* Social Icons Sidebar */}
@@ -32,6 +33,7 @@ const HomeSection: React.FC = () => {
           display: "flex",
           flexDirection: "column",
           gap: 2,
+          overflowX: "hidden", // Prevents overflow on this section
         }}
       >
         <IconButton href="https://linkedin.com/in/minashoukrala" target="_blank" sx={{ color: "text.primary" }}>
@@ -43,7 +45,7 @@ const HomeSection: React.FC = () => {
       </Box>
 
       {/* Left Side - Text Content */}
-    <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" }, paddingLeft: { xs: "50px", md: "80px" } }}>
+    <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" }, paddingLeft: { xs: "50px", md: "80px" }, overflowX: "hidden" }}>
     <Typography 
     variant="h5" 
     sx={{ 
@@ -58,6 +60,7 @@ const HomeSection: React.FC = () => {
         textTransform: "uppercase", // Match the reference style
         color: "black",
         mb: 2
+        
     }}>
     👋 Hi There! I'm Mina Shoukrala
     </Typography>
@@ -79,22 +82,32 @@ const HomeSection: React.FC = () => {
     </Box>
 
       {/* Right Side - Image */}
-      <Box sx={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <motion.img
-        src={avatar}
-        alt="Mina's Avatar"
-        initial={{ opacity: 0, scale: 0.8 }} // Fades in and starts slightly smaller
-        animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }} // Smooth fade-in & floating effect
-        transition={{ duration: 1.5, ease: "easeOut", repeat: Infinity, repeatType: "reverse" }} // Smooth looping motion
-        whileHover={{ scale: 1.05, rotate: 2, y: -15 }} // Slight rotation and movement on hover
-        style={{
+     
+        <Box 
+        sx={{
+            flex: 1, 
+            display: "flex", 
+            justifyContent: "center", 
+            alignItems: "center",
+            width: "100%",
+            overflow: "hidden", // Ensures no horizontal scroll
+        }}
+        >
+        <motion.img
+            src={avatar}
+            alt="Mina's Avatar"
+            initial={{ opacity: 0, scale: 0.8 }} // Fades in and starts slightly smaller
+            animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }} // Smooth fade-in & floating effect
+            transition={{ duration: 1.5, ease: "easeOut", repeat: Infinity, repeatType: "reverse" }} // Smooth looping motion
+            whileHover={{ scale: 1.05, rotate: 2, y: -15 }} // Slight rotation and movement on hover
+            style={{
             width: "100%",
             maxWidth: "550px",
             height: "auto",
             objectFit: "cover",
-        }}
+            }}
         />
-      </Box>
+        </Box>
     </Box>
   );
 };
