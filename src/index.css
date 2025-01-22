@@ -85,6 +85,7 @@ html, body {
   height: 100%;
   overflow-x: hidden; /* Stop horizontal scrolling */
   background-color: #1C1C1C; /* Match website theme */
+  font-family: 'Orbitron', sans-serif;
 }
 
 #root {

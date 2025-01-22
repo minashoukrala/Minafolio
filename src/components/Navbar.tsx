@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { AppBar, Toolbar, Box, Button, IconButton, Drawer, List, ListItem, ListItemButton } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu"; // Hamburger icon
+import MenuIcon from "@mui/icons-material/Menu"; // Importing Material UI's Hamburger Icon
 
 const Navbar: React.FC = () => {
+  // State for controlling mobile menu visibility
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Function to toggle mobile menu
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  // Function to scroll to a section smoothly
+  // Function to scroll smoothly to a section when clicking a navbar item
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       window.scrollTo({
         top: section.offsetTop - 80, // Adjust for navbar height
-        behavior: "smooth",
+        behavior: "smooth", // Enables smooth scrolling animation
       });
     }
     setMobileOpen(false); // Close mobile menu after clicking
@@ -23,42 +25,48 @@ const Navbar: React.FC = () => {
 
   return (
     <>
+      {/* Navbar Container */}
       <AppBar
         position="fixed"
         sx={{
-          bgcolor: "primary.main",
-          boxShadow: "none",
-          height: { xs: "70px", md: "80px" },
-          width: "100vw",
+          bgcolor: "primary.main", // Navbar background color
+          boxShadow: "none", // Removes default shadow
+          height: { xs: "70px", md: "80px" }, // Responsive navbar height
+          width: "100vw", // Full width navbar
         }}
       >
         <Toolbar
           sx={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "space-between", // Aligns elements on both sides
             alignItems: "center",
             width: "100%",
-            maxWidth: "100%",
-            paddingX: { xs: "20px", md: "50px" },
+            paddingX: { xs: "20px", md: "50px" }, // Adjusts padding for responsiveness
           }}
         >
-          {/* Logo */}
+          {/* Logo Section */}
           <Box
             component="img"
             src="b96df776def348648835c0b74109673a-free__3_-removebg-preview.png"
             alt="Mina Shoukrala Logo"
             sx={{
-              width: { xs: "120px", md: "150px" },
+              width: { xs: "120px", md: "150px" }, // Responsive logo size
               height: "auto",
               objectFit: "contain",
               marginTop: "5px",
             }}
           />
 
-          {/* Navbar Links - Visible on Large Screens */}
+          {/* Desktop Navbar Links (Visible on Large Screens) */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: "40px" }}>
             <Button onClick={() => scrollToSection("home")} sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
               Home
+            </Button>
+            <Button onClick={() => scrollToSection("experience")} sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
+              Experience
+            </Button>
+            <Button onClick={() => scrollToSection("education")} sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
+              Education
             </Button>
             <Button onClick={() => scrollToSection("projects")} sx={{ color: "text.primary", fontSize: "1.5rem", fontWeight: "bold", textTransform: "none" }}>
               Projects
@@ -71,7 +79,7 @@ const Navbar: React.FC = () => {
             </Button>
           </Box>
 
-          {/* Hamburger Menu Button - Visible on Small Screens */}
+          {/* Hamburger Menu Button (Visible on Small Screens) */}
           <IconButton
             sx={{ display: { xs: "block", md: "none" }, color: "text.primary" }}
             onClick={handleDrawerToggle}
@@ -81,16 +89,16 @@ const Navbar: React.FC = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Sidebar Drawer for Mobile Navigation */}
+      {/* Mobile Sidebar Menu (Drawer) */}
       <Drawer
-        anchor="right"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
+        anchor="right" // Menu slides in from the right
+        open={mobileOpen} // Controls menu visibility
+        onClose={handleDrawerToggle} // Closes menu when clicking outside
         sx={{
           "& .MuiDrawer-paper": {
-            width: "250px",
-            bgcolor: "primary.main",
-            color: "text.primary",
+            width: "250px", // Sidebar width
+            bgcolor: "primary.main", // Background color
+            color: "text.primary", // Text color
           },
         }}
       >
@@ -99,6 +107,20 @@ const Navbar: React.FC = () => {
             <ListItemButton onClick={() => scrollToSection("home")}>
               <Button sx={{ color: "text.primary", fontSize: "1.4rem", fontWeight: "bold", textTransform: "none" }}>
                 Home
+              </Button>
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton onClick={() => scrollToSection("experience")}>
+              <Button sx={{ color: "text.primary", fontSize: "1.4rem", fontWeight: "bold", textTransform: "none" }}>
+                Experience
+              </Button>
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton onClick={() => scrollToSection("education")}>
+              <Button sx={{ color: "text.primary", fontSize: "1.4rem", fontWeight: "bold", textTransform: "none" }}>
+                Education
               </Button>
             </ListItemButton>
           </ListItem>

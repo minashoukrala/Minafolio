@@ -18,7 +18,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Poppins, sans-serif",
+    fontFamily: "Orbitron, sans-serif",
     h1: { color: "#FAFAD2", fontWeight: "bold" },
     h2: { color: "#FAFAD2" },
     h3: { color: "#FAFAD2" },

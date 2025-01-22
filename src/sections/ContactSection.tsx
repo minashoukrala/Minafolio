@@ -17,7 +17,7 @@ const ContactSection: React.FC = () => {
         padding: { xs: "40px 20px", md: "80px 100px" }, // ✅ Better responsiveness
       }}
     >
-      <Typography variant="h2" sx={{ color: "text.primary", fontWeight: "bold", textAlign: "center" }}>
+      <Typography variant="h2" sx={{ color: "text.primary", fontWeight: "bold", textAlign: "center", fontSize: { xs: "2rem", md: "3.5rem" } }}>
         Contact Me
       </Typography>
     </Box>

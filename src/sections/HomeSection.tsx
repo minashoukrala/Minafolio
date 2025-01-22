@@ -26,17 +26,18 @@ const HomeSection: React.FC = () => {
       {/* Social Icons Sidebar */}
       <Box
         sx={{
-          position: "absolute",
-          left: { xs: "10px", md: "40px" },
-          top: "50%",
-          transform: "translateY(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          gap: 2,
-          zIndex: 10,
+            position: "absolute",
+            left: { xs: "10px", md: "40px" }, // ✅ Adjust left margin for small screens
+            top: { xs: "auto", md: "50%" }, // ✅ Allow flexible positioning
+            bottom: { xs: "20px", md: "auto" }, // ✅ Moves it below text on mobile
+            transform: { md: "translateY(-50%)" }, // ✅ Centers only for desktop
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+            zIndex: 10,
         }}
-      >
-        <IconButton href="https://linkedin.com/in/minashoukrala" target="_blank" sx={{ color: "text.primary" }}>
+        >
+        <IconButton href="https://www.linkedin.com/in/mina-shoukrala-8571a8219/" target="_blank" sx={{ color: "text.primary" }}>
           <LinkedInIcon sx={{ fontSize: 40 }} />
         </IconButton>
         <IconButton href="https://github.com/minashoukrala" target="_blank" sx={{ color: "text.primary" }}>
@@ -90,7 +91,7 @@ const HomeSection: React.FC = () => {
             fontSize: { xs: "1rem", md: "1.2rem" },
           }}
         >
-          Make lives better with technology.
+          Making lives better with technology.
         </Typography>
         </Box>
 

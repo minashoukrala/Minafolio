@@ -16,7 +16,7 @@ const ProjectsSection: React.FC = () => {
     padding: { xs: "40px 20px", md: "80px 100px" },
   }}
 >
-  <Typography variant="h2" sx={{ color: "text.primary", textAlign: { xs: "center", md: "left" } }}>
+  <Typography variant="h2" sx={{ color: "text.primary", fontWeight: "bold",textAlign: { xs: "center", md: "left" },fontSize: { xs: "2rem", md: "3.5rem" } }}>
     Projects
   </Typography>
 </Box>
