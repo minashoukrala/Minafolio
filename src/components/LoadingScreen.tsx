@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const LoadingScreen: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
-  const profilePic = "/professional_portrait-removebg-preview.png";
+  const profilePic = "/my-portfolio/public/professional_portrait-removebg-preview.png";
 
   useEffect(() => {
     const timer = setTimeout(() => {

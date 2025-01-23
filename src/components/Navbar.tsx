@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
           {/* Logo Section */}
           <Box
             component="img"
-            src="/b96df776def348648835c0b74109673a-free__3_-removebg-preview.png"
+            src="/my-portfolio/public/logo.png"
             alt="Mina Shoukrala Logo"
             sx={{
               width: { xs: "120px", md: "150px" }, // Responsive logo size
