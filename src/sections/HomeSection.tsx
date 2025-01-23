@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-const avatar = "/my-portfolio/public/professional_gold_illustration-removebg-preview.png"; // Replace with your actual image
+const avatar = "./professional_gold_illustration-removebg-preview.png"; // Replace with your actual image
 
 const HomeSection: React.FC = () => {
   return (
