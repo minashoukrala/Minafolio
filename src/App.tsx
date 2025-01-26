@@ -8,6 +8,9 @@ import ProjectsSection from "./sections/ProjectsSection";
 import ContactSection from "./sections/ContactSection";
 import EducationSection from "./sections/EducationSection.tsx"; // ✅ Added Education section
 import LoadingScreen from "./components/LoadingScreen"; // Loading screen
+import CertificationSection from "./sections/CertifictionSection.tsx";
+
+
 
 
 const App: React.FC = () => {
@@ -41,6 +44,7 @@ const App: React.FC = () => {
           <AboutSection />  {/* ✅ About Section after Home */}
           <ExperienceSection />  {/* ✅ Experience Section after About */}
           <EducationSection />  {/* ✅ Education Section after Experience */}
+          <CertificationSection />
           <ProjectsSection />
           <ContactSection />
         </>

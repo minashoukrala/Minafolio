@@ -81,7 +81,6 @@ const ExperienceSection: React.FC = () => {
         variant="h2"
         sx={{ color: "text.primary", fontWeight: "bold", mb: 6, fontSize: { xs: "2rem", md: "3.5rem" } }}
         component={motion.div}
-        
         initial={{ opacity: 0, y: -20 }} // Start hidden and move up
         whileInView={{ opacity: 1, y: 0 }} // Fade in when scrolled into view
         viewport={{ once: false }} // Allows animation to repeat on scroll
@@ -118,9 +117,16 @@ const ExperienceSection: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.15 }} // Slight delay for cascading effect
             >
               {/* 🏷️ Experience Title */}
-              <Typography variant="h5" sx={{ fontWeight: "bold", color: "#FAFAD2", mb: 1 }}>
+              <Typography variant="h5" sx={{ fontWeight: "bold", color: "#FAFAD2", mb: 0.5 }}>
                 {exp.title}
               </Typography>
+
+              {/* 📌 Smaller Font for Company Name */}
+              {exp.company && (
+                <Typography variant="body1" sx={{ fontWeight: "medium", color: "#FFD700", fontSize: "0.9rem", mb: 1 }}>
+                  {exp.company}
+                </Typography>
+              )}
 
               {/* 📝 Job Description */}
               {exp.roles ? (
@@ -128,24 +134,27 @@ const ExperienceSection: React.FC = () => {
                   {exp.roles.map((role, roleIndex) => (
                     <Box key={roleIndex} sx={{ mb: 2 }}>
                       <Typography variant="h6" sx={{ fontWeight: "bold", color: "#FAFAD2" }}>
-                        {role.title} - {role.company}
+                        {role.title}
+                      </Typography>
+                      <Typography variant="body1" sx={{ fontWeight: "medium", color: "#FFD700", fontSize: "0.9rem" }}>
+                        {role.company}
                       </Typography>
                       <Typography variant="body2" sx={{ color: "#FAFAD2" }}>
                         {role.description}
                       </Typography>
-                      {/* 📌 Date Below Description on the Left */}
                     </Box>
                   ))}
-                    <Typography variant="body2" sx={{ fontStyle: "italic", color:"#FAFAD2", mt: 1, textAlign:"center" }}>
-                        {exp.duration}
-                    </Typography>
+                  {/* 📌 Date Below Description in Centered Style */}
+                  <Typography variant="body2" sx={{ fontStyle: "italic", color: "#FAFAD2", mt: 1, textAlign: "center" }}>
+                    {exp.duration}
+                  </Typography>
                 </Box>
               ) : (
                 <Box>
-                  <Typography variant="body1" sx={{ color: "#FAFAD2", textAlign: "left" }}>
+                  <Typography variant="body2" sx={{ color: "#FAFAD2", textAlign: "left" }}>
                     {exp.description}
                   </Typography>
-                  {/* 📌 Date Below Description on the Left */}
+                  {/* 📌 Date Below Description */}
                   <Typography variant="body2" sx={{ fontStyle: "italic", color: "#FAFAD2", mt: 1 }}>
                     {exp.duration}
                   </Typography>
@@ -159,4 +168,4 @@ const ExperienceSection: React.FC = () => {
   );
 };
 
-export default ExperienceSection; // Export the components
+export default ExperienceSection;

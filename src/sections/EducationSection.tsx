@@ -5,7 +5,7 @@ import "react-vertical-timeline-component/style.min.css"; // Import Timeline sty
 import SchoolIcon from "@mui/icons-material/School"; // Education icon from Material UI
 import { motion } from "framer-motion"; // Import motion for animations
 
-// 🎓 Education data (Updated from Resume)
+// 🎓 Education Data (Updated)
 const education = [
   {
     degree: "Master’s Degree in Computer Science",
@@ -48,7 +48,6 @@ const EducationSection: React.FC = () => {
           fontFamily: "'Orbitron', sans-serif", // Match portfolio font
           fontSize: { xs: "2rem", md: "3.5rem" }, // Responsive font sizes
           mb: 6,
-          
         }}
         component={motion.div}
         initial={{ opacity: 0, y: -20 }} // Start hidden and move up
@@ -94,18 +93,18 @@ const EducationSection: React.FC = () => {
                   color: "#FAFAD2",
                   fontFamily: "'Orbitron', sans-serif",
                   fontSize: { xs: "1.3rem", md: "1.8rem" }, // Responsive font sizes
-                  mb: 1,
+                  mb: 0.5,
                 }}
               >
                 {edu.degree}
               </Typography>
 
-              {/* 🏛️ University Name */}
+              {/* 🏛️ University Name (Smaller Font, Below Degree) */}
               <Typography
                 variant="body1"
                 sx={{
                   fontWeight: "500",
-                  color: "#FAFAD2",
+                  color: "#FFD700", // Gold color for contrast
                   fontFamily: "'Orbitron', sans-serif",
                   fontSize: { xs: "1rem", md: "1.2rem" },
                   mb: 1,
@@ -113,8 +112,6 @@ const EducationSection: React.FC = () => {
               >
                 {edu.university}
               </Typography>
-
-              
 
               {/* 📖 Education Description */}
               <Typography
@@ -124,10 +121,12 @@ const EducationSection: React.FC = () => {
                   fontFamily: "'Orbitron', sans-serif",
                   fontSize: { xs: "0.9rem", md: "1.1rem" },
                   textAlign: "left",
+                  mb: 1,
                 }}
               >
                 {edu.description}
               </Typography>
+
               {/* 📅 Date Below Description on the Left */}
               <Typography
                 variant="body2"
@@ -136,7 +135,6 @@ const EducationSection: React.FC = () => {
                   color: "#FAFAD2",
                   fontFamily: "'Orbitron', sans-serif",
                   fontSize: { xs: "0.8rem", md: "1rem" },
-                  mb: 2,
                 }}
               >
                 {edu.duration}
