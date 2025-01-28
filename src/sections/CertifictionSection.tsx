@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay, Pagination } from "swiper/modules";
+import { Typography } from "@mui/material";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -79,7 +80,7 @@ const CertificationSection = () => {
 
   return (
     <section className="cert-section">
-      <h2 className="cert-heading">Certifications</h2>
+      <Typography variant="h2" marginBottom={9} sx={{ color: "text.primary", fontWeight: "bold", fontSize: { xs: "2rem", md: "3.5rem" }}}>Certifications</Typography>
 
       <div className="cert-carousel-container">
         <Swiper
