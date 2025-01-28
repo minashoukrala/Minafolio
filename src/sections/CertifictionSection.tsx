@@ -4,40 +4,54 @@ import { EffectCoverflow, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import "./CertificationSection.css"; // Ensure the correct path
+import "./CertificationSection.css"; 
 
 const certifications = [
   {
-    title: "AWS Certified Solutions Architect",
-    provider: "Amazon Web Services",
-    date: "Issued: Dec 2023",
-    credential: "https://www.credly.com/",
-    image: "/aws-certification.png", // Update with actual path
+    title: "Information Storage and Management",
+    provider: "Dell Technologies",
+    date: "Issued: Jan 2021",
+    credential: "https://www.credly.com/badges/23b11a29-adcc-4fc2-814f-b76de53cad83/public_url",
+    image: "./Dell.png",
   },
   {
-    title: "Google Cloud Associate Engineer",
-    provider: "Google Cloud",
-    date: "Issued: Jul 2023",
-    credential: "https://www.credly.com/",
-    image: "/gcp-certification.png", // Update with actual path
-  },
-  {
-    title: "Microsoft Azure Fundamentals",
-    provider: "Microsoft",
-    date: "Issued: May 2023",
-    credential: "https://www.credly.com/",
-    image: "/azure-certification.png", // Update with actual path
+    title: "Associate - Data Science Version 2.0",
+    provider: "Dell Technologies",
+    date: "Issued: Jan 2021",
+    credential: "https://www.credly.com/badges/1db03425-ff13-4c57-bba2-433e6c7a50b8/linked_in_profile",
+    image: "./Dell.png",
   },
   {
     title: "Microsoft Azure Fundamentals",
     provider: "Microsoft",
-    date: "Issued: May 2023",
-    credential: "https://www.credly.com/",
-    image: "/azure-certification.png", // Update with actual path
+    date: "Issued: Jul 2022",
+    credential: "https://www.credly.com/badges/8c72dbb3-03f8-43e8-8743-b085cf4fce28/linked_in_profile",
+    image: "./Azure.png",
+  },
+  {
+    title: "Associate - PowerEdge Version 2.0",
+    provider: "Dell Technologies",
+    date: "Issued: Jan 2023",
+    credential: "https://www.credly.com/badges/904f56cb-def2-4662-9f43-f2b26e3c6457/linked_in_profile",
+    image: "./Dell.png",
+  },
+  {
+    title: "Specialist - Cloud Architect, Cloud Infrastructure V3",
+    provider: "Dell Technologies",
+    date: "Issued: Jan 2023",
+    credential: "https://www.credly.com/badges/24038d79-d900-4940-bc9e-5855714faae5/linked_in_profile",
+    image: "./Dell.png",
+  },
+  {
+    title: "Machine Learning Specialist",
+    provider: "DeepLearning.AI",
+    date: "Issued: May 2024",
+    credential: "https://www.coursera.org/account/accomplishments/specialization/SJP6BEJUQLHE",
+    image: "./deeplearningai.png",
   },
 ];
 
-const CertificationCard = ({ title, provider, date, credential, image }: any) => (
+const CertificationCard = ({ title, provider, date, credential, image }) => (
   <div className="certification-card">
     <img src={image} alt={title} className="cert-image" />
     <h3 className="cert-title">{title}</h3>
@@ -50,15 +64,17 @@ const CertificationCard = ({ title, provider, date, credential, image }: any) =>
 );
 
 const CertificationSection = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
+    const updateSize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    updateSize(); // Call once at the start
+    window.addEventListener("resize", updateSize);
+
+    return () => window.removeEventListener("resize", updateSize);
   }, []);
 
   return (
@@ -67,23 +83,25 @@ const CertificationSection = () => {
 
       <div className="cert-carousel-container">
         <Swiper
-          effect={isMobile ? "" : "coverflow"}
+          effect={isMobile ? "slide" : "coverflow"} // ✅ Coverflow only on big screens
           grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={isMobile ? 1 : 3}
+          centeredSlides={!isMobile} // ✅ Do not center slides on small screens
+          slidesPerView={isMobile ? 1 : 3} // ✅ 1 slide on mobile, 3 on big screens
           spaceBetween={30}
           loop={true}
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: false,
-          }}
           modules={[EffectCoverflow, Pagination, Autoplay]}
           className="mySwiper"
+          {...(!isMobile && { // ✅ Apply effect only if NOT mobile
+            coverflowEffect: {
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: false,
+            }
+          })}
         >
           {certifications.map((cert, index) => (
             <SwiperSlide key={index}>
@@ -92,6 +110,15 @@ const CertificationSection = () => {
           ))}
         </Swiper>
       </div>
+
+      {/* ❗❗ Explicitly disable rotation for small screens */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .swiper-slide {
+            transform: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

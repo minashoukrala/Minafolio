@@ -13,7 +13,7 @@
 
 .cert-heading {
     font-size: 3rem;
-    margin-bottom: 40px;
+    margin-bottom: 10%;
     color: #fafad2;
 }
 
@@ -128,8 +128,9 @@
     }
 
     .certification-card {
-        width: 260px;
-        height: 380px;
+        width: 90%;  /* ✅ Increase width to 90% of screen */
+        max-width: 400px; /* ✅ Set a reasonable max-width */
+        height: auto; /* ✅ Allow height to adjust */
     }
 
     .cert-heading {
@@ -139,7 +140,7 @@
 
 @media (max-width: 480px) {
     .cert-section {
-        padding: 20px 0;
+        padding: 20 0;
     }
 
     .cert-heading {
@@ -147,8 +148,9 @@
     }
 
     .certification-card {
-        width: 220px;
-        height: 350px;
+        width: 80%; /* ✅ Make it even wider on very small screens */
+        max-width: 420px; /* ✅ Prevent it from becoming too large */
+        height: 380px; 
     }
 
     .cert-title {
