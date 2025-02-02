@@ -9,6 +9,7 @@ import ContactSection from "./sections/ContactSection";
 import EducationSection from "./sections/EducationSection.tsx"; // ✅ Added Education section
 import LoadingScreen from "./components/LoadingScreen"; // Loading screen
 import CertificationSection from "./sections/CertifictionSection.tsx";
+//import CustomCursor from "react-custom-cursor";
 
 
 
@@ -39,6 +40,7 @@ const App: React.FC = () => {
         <LoadingScreen />
       ) : (
         <>
+         
           <Navbar />
           <HomeSection />
           <AboutSection />  {/* ✅ About Section after Home */}

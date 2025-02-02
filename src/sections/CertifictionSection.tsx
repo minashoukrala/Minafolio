@@ -5,7 +5,10 @@ import { Typography } from "@mui/material";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import "./CertificationSection.css"; 
+import "../styles/CertificationSection.css"; 
+import { motion } from "framer-motion"; // Import motion for animations
+import "../styles/Global.css"
+
 
 const certifications = [
   {
@@ -79,8 +82,31 @@ const CertificationSection = () => {
   }, []);
 
   return (
-    <section className="cert-section">
-      <Typography variant="h2" marginBottom={9} sx={{ color: "text.primary", fontWeight: "bold", fontSize: { xs: "2rem", md: "3.5rem" }}}>Certifications</Typography>
+    <section id= "certifications" className="cert-section golden-background">
+      <div className="golden-stars">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <Typography
+        variant="h2"
+        sx={{
+          color: "text.primary",
+          fontWeight: "bold",
+          fontFamily: "'Orbitron', sans-serif", // Match portfolio font
+          fontSize: { xs: "2rem", md: "3.5rem" }, // Responsive font sizes
+          mb: 6,
+        }}
+        component={motion.div}
+        initial={{ opacity: 0, y: -20 }} // Start hidden and move up
+        whileInView={{ opacity: 1, y: 0 }} // Fade in when scrolled into view
+        viewport={{ once: false }} // Allows animation to repeat on scroll
+        transition={{ duration: 0.6 }}
+      >
+        Certifications
+      </Typography>
 
       <div className="cert-carousel-container">
         <Swiper

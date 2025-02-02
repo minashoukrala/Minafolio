@@ -4,6 +4,7 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 import "react-vertical-timeline-component/style.min.css"; // Import Timeline styles
 import SchoolIcon from "@mui/icons-material/School"; // Education icon from Material UI
 import { motion } from "framer-motion"; // Import motion for animations
+import "../styles/Global.css"
 
 // 🎓 Education Data (Updated)
 const education = [
@@ -27,6 +28,7 @@ const EducationSection: React.FC = () => {
   return (
     <Box
       id="education" // ID for navigation linking
+      className="golden-background"
       sx={{
         width: "100vw", // Full width of the viewport
         minHeight: "100vh", // Ensure section takes full screen height
@@ -34,11 +36,17 @@ const EducationSection: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        bgcolor: "background.paper", // Background color
         padding: { xs: "60px 20px", md: "100px 120px" }, // Responsive padding
         textAlign: "center",
       }}
     >
+      <div className="golden-stars">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
       {/* 🔥 Section Title with Animation */}
       <Typography
         variant="h2"

@@ -4,6 +4,7 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 import "react-vertical-timeline-component/style.min.css"; // Import Timeline styles
 import WorkIcon from "@mui/icons-material/Work"; // Import work icon from Material UI
 import { motion } from "framer-motion"; // Import motion for animations
+import "../styles/Global.css"
 
 // 🎯 Define all experiences in an array for easier updates
 const experiences = [
@@ -22,7 +23,7 @@ const experiences = [
         description: "Provided technical support, optimized IT systems, and ensured compliance with data security standards.",
       },
       {
-        title: "Web Development Teacher",
+        title: "Web Development/Programming Instructor",
         company: "ECS",
         description: "Taught web development fundamentals, guiding students through building responsive and accessible web applications.",
       },
@@ -64,6 +65,7 @@ const ExperienceSection: React.FC = () => {
   return (
     <Box
       id="experience" // ID for linking from the navbar
+      className="golden-background"
       sx={{
         width: "100vw", // Full width of the viewport
         minHeight: "100vh", // Ensure section takes full screen height
@@ -71,11 +73,18 @@ const ExperienceSection: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        bgcolor: "background.paper", // Background color
         padding: { xs: "60px 20px", md: "100px 120px" }, // Responsive padding for different screen sizes
         textAlign: "center",
       }}
     >
+      <div className="golden-stars">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+      
       {/* 🔥 Section Title with Animation */}
       <Typography
         variant="h2"

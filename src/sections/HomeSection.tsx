@@ -3,6 +3,7 @@ import { Box, Typography, IconButton} from "@mui/material";
 import { motion } from "framer-motion";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import "../styles/Global.css";
 
 const avatar = "./professional_gold_illustration-removebg-preview.png"; // Replace with your actual image
 
@@ -10,10 +11,10 @@ const HomeSection: React.FC = () => {
   return (
     <Box
       id="home"
+      className = "golden-background"
       sx={{
         width: "100vw",
         minHeight: "100vh",
-        bgcolor: "background.default",
         display: "flex",
         flexDirection: { xs: "column", md: "row" }, // ✅ Stacks on mobile, side-by-side on larger screens
         alignItems: "center",
@@ -22,7 +23,16 @@ const HomeSection: React.FC = () => {
         textAlign: { xs: "center", md: "left" },
         overflowX: "hidden",
       }}
+      
     >
+      <div className="golden-stars">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+
       {/* Social Icons Sidebar */}
       <Box
         sx={{

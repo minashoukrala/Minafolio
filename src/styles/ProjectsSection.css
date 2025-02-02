@@ -1,0 +1,43 @@
+.projects-container {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: black;
+  }
+  
+  .project-title {
+    color: #fafad2;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .project-card {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  .project-card img {
+    flex: 1.2;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  .project-details {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .project-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
