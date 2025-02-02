@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/my-portfolio/", // ← Make sure this matches your GitHub repo name
+  base: "/minafolio/", // ← Make sure this matches your GitHub repo name
 });

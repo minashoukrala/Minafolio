@@ -11,7 +11,7 @@ const projects = [
     description: "A Next.js & TypeScript portfolio showcasing projects, experience, and skills. Built with React, Material UI, and Framer Motion for a sleek UI, smooth animations, and full responsiveness. Features a modern design, interactive components, and a well-structured layout.",
     image: "./portfolio.png", // Update with actual images
     liveLink: "https://minashoukrala.github.io/minafolio/",
-    githubLink: "https://github.com/minashoukrala/my-portfolio",
+    githubLink: "https://github.com/minashoukrala/minafolio",
     tags: ["Web-Developer", "React", "Typescript"],
   },
   {
