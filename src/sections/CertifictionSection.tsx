@@ -55,14 +55,24 @@ const certifications = [
   },
 ];
 
-const CertificationCard = ({ title, provider, date, credential, image }) => (
+interface CertificationProps {
+  title: string;
+  provider: string;
+  date: string;
+  credential: string;
+  image: string;
+}
+
+const CertificationCard: React.FC<CertificationProps> = ({ 
+  title, provider, date, credential, image 
+}) => (
   <div className="certification-card">
     <img src={image} alt={title} className="cert-image" />
     <h3 className="cert-title">{title}</h3>
     <p className="cert-provider">{provider}</p>
     <p className="cert-date">{date}</p>
     <a href={credential} target="_blank" rel="noopener noreferrer" className="cert-button">
-      View Credential
+      View Certificate
     </a>
   </div>
 );
@@ -139,7 +149,7 @@ const CertificationSection = () => {
       </div>
 
       {/* ❗❗ Explicitly disable rotation for small screens */}
-      <style jsx>{`
+      <style>{`
         @media (max-width: 768px) {
           .swiper-slide {
             transform: none !important;

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Box, Typography, Stack } from "@mui/material";
 import ProjectCard from "../components/ProjectCard";
 import "../styles/ProjectsSection.css"

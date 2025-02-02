@@ -86,10 +86,10 @@ const ContactSection: React.FC = () => {
         <IconButton href="mailto:minamdoss@outlook.com" target="_blank" sx={{ color: "#FAFAD2", fontSize: "2rem", transition: "0.3s", "&:hover": { transform: "scale(1.2)" } }}>
           <EmailIcon sx={{ fontSize: "2rem" }} />
         </IconButton>
-        <IconButton href="https://www.linkedin.com/in/your-profile/" target="_blank" sx={{ color: "#FAFAD2", fontSize: "2rem", transition: "0.3s", "&:hover": { transform: "scale(1.2)" } }}>
+        <IconButton href="https://www.linkedin.com/in/mina-shoukrala-8571a8219/" target="_blank" sx={{ color: "#FAFAD2", fontSize: "2rem", transition: "0.3s", "&:hover": { transform: "scale(1.2)" } }}>
           <LinkedInIcon sx={{ fontSize: "2rem" }} />
         </IconButton>
-        <IconButton href="https://github.com/your-github" target="_blank" sx={{ color: "#FAFAD2", fontSize: "2rem", transition: "0.3s", "&:hover": { transform: "scale(1.2)" } }}>
+        <IconButton href="https://github.com/minashoukrala" target="_blank" sx={{ color: "#FAFAD2", fontSize: "2rem", transition: "0.3s", "&:hover": { transform: "scale(1.2)" } }}>
           <GitHubIcon sx={{ fontSize: "2rem" }} />
         </IconButton>
       </Stack>
