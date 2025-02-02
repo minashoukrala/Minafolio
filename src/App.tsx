@@ -46,8 +46,8 @@ const App: React.FC = () => {
           <AboutSection />  {/* ✅ About Section after Home */}
           <ExperienceSection />  {/* ✅ Experience Section after About */}
           <EducationSection />  {/* ✅ Education Section after Experience */}
-          <CertificationSection />
           <ProjectsSection />
+          <CertificationSection />
           <ContactSection />
         </>
       )}

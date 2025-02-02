@@ -23,9 +23,9 @@ const experiences = [
         description: "Provided technical support, optimized IT systems, and ensured compliance with data security standards.",
       },
       {
-        title: "Web Development/Programming Instructor",
+        title: "Web Dev/Programming Instructor",
         company: "ECS",
-        description: "Taught web development fundamentals, guiding students through building responsive and accessible web applications.",
+        description: "Taught Programming and web development fundamentals, guiding students through building responsive and accessible web applications.",
       },
     ],
     icon: <WorkIcon />,

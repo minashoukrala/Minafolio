@@ -7,19 +7,46 @@ import "../styles/Global.css"
 
 const projects = [
   {
-    title: "Melengo",
-    description: "Develop new ideas, launch faster, and scale your best products with an end-to-end manufacturing platform.",
+    title: "Minafolio",
+    description: "A Next.js & TypeScript portfolio showcasing projects, experience, and skills. Built with React, Material UI, and Framer Motion for a sleek UI, smooth animations, and full responsiveness. Features a modern design, interactive components, and a well-structured layout.",
     image: "./portfolio.png", // Update with actual images
-    liveLink: "https://example.com",
-    githubLink: "https://github.com/example",
-    tags: ["Development", "CMS"],
+    liveLink: "https://minashoukrala.github.io/my-portfolio/",
+    githubLink: "https://github.com/minashoukrala/my-portfolio",
+    tags: ["Web-Developer", "React", "Typescript"],
   },
   {
     title: "Loan Prediction Model",
-    description: "A machine learning project that predicts loan approvals using Neural Networks and Logistic Regression.",
-    image: "/images/loan-model.png",
-    githubLink: "https://github.com/example",
-    tags: ["AI", "Finance", "Data Science"],
+    description: "A machine learning model for loan approval prediction using Neural Networks and Logistic Regression. Built with Pandas, NumPy, Scikit-learn, and TensorFlow/Keras, featuring data visualization and performance evaluation.",
+    image: "./loanproject.png",
+    githubLink: "https://github.com/minashoukrala/Loan-Prediction-Model",
+    tags: ["ML", "Data Science", "Python", "Neural-Networks", "Data-Visualization"],
+  },
+  {
+    title: "Bookstore Website",
+    description: "A full-stack e-commerce platform for managing books, orders, and payments. Built with a Django backend, React frontend, and Azure SQL database, it supports user authentication, product management, shopping cart functionality, and Stripe payments. Fully responsive and secure.",
+    image: "./bookstore.png",
+    githubLink: "https://github.com/minashoukrala/BookstoreWebApp",
+    tags: ["Full-Stack", "Django", "React", "Auth"],
+  },
+  {
+    title: "Super Mina",
+    description: "A 2D platformer inspired by Super Mario, built with C# and Unity using Object-Oriented Programming (OOP) design patterns for modularity and scalability. Features smooth player controls, enemy AI, collectibles, level progression, and dynamic physics interactions. Designed for an engaging and responsive gameplay experience.",
+    image: "./supermario.jpg",
+    tags: ["Unity", "C#", "OOP"],
+  },
+  {
+    title: "GameBox",
+    description: "A collection of Battleship and Tic-Tac-Toe, built with OOP principles for modularity. Features turn-based gameplay, AI opponents, grid-based logic, and an interactive experience with clean, efficient code.",
+    image: "./nopic.jpg",
+    githubLink: "https://github.com/minashoukrala/GameBox",
+    tags: ["OOP", "JavaScript", "Python", "C#"],
+  },
+  {
+    title: "'I Have a Dream' Analysis",
+    description: "An R-based text analysis of Martin Luther King Jr.'s 'I Have a Dream' speech. Uses tidytext, ggplot2, and dplyr for sentiment analysis, word frequency, and linguistic insights. Includes data visualizations to highlight key themes and rhetorical patterns.",
+    image: "./speechanalysis.jpg",
+    githubLink: "https://github.com/minashoukrala/I_have_a_dream-Analysis",
+    tags: ["R", "NLP", "Data-Visualization"],
   },
 ];
 
