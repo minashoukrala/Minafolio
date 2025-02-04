@@ -23,7 +23,7 @@ const experiences = [
         description: "Provided technical support, optimized IT systems, and ensured compliance with data security standards.",
       },
       {
-        title: "Web Dev/Programming Instructor",
+        title: "Web-development Instructor / Software Engineer",
         company: "ECS",
         description: "Taught Programming and web development fundamentals, guiding students through building responsive and accessible web applications.",
       },
@@ -33,7 +33,7 @@ const experiences = [
   {
     title: "Software Engineer Apprenticeship",
     company: "Career Advancement Program (CAP)",
-    duration: "Jun 2024 - Sep 2024",
+    duration: "Jun 2024 - Present",
     description: "Reinforced data structures, algorithms, and full-stack development (C#, JavaScript, React). Built real-world projects and gained cloud experience with Microsoft Azure.",
     icon: <WorkIcon />,
   },
